@@ -1,3 +1,3 @@
 https://dilipannztech.github.io/swagger/
 
-use openapi.json to access mirth documentation
+use openapi.json to explore mirth documentation
