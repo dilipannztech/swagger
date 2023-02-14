@@ -1,0 +1,457 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "mirth doc",
+    "description": "doc for mirth",
+    "version": "1.0.0"
+  },
+  "externalDocs": {
+    "description": "Find out more about Swagger",
+    "url": "http://swagger.io"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:1001/"
+    },
+    {
+      "url": "http://localhost:1002/"
+    },
+    {
+      "url": "http://185.238.70.60:1003/"
+    },
+    {
+      "url": "http://localhost:1004/"
+    },
+    {
+      "url": "http://localhost:1006/"
+    },
+    {
+      "url": "http://localhost:1009/"
+    }
+  ],
+  "tags": [
+    {
+      "name": "mirth",
+      "description": "for mirth"
+    }
+  ],
+  "paths": {
+    "/login/": {
+      "post": {
+        "tags": [
+          "mirth"
+        ],
+        "summary": "mirth login here !!!",
+        "requestBody": {
+          "description": "Pet object that needs to be added to the store",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/loginn"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loginn"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/loginn"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Pet not found"
+          },
+          "405": {
+            "description": "Validation exception"
+          }
+        }
+      }
+    },
+    "/verify/": {
+      "post": {
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "tags": [
+          "mirth"
+        ],
+        "summary": "verifying token here !!!",
+        "requestBody": {
+          "description": "verify token",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/verify"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/verify"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/verify"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          }
+        }
+      }
+    },
+    "/createOrUpdateUser/": {
+      "post": {
+        "tags": [
+          "mirth"
+        ],
+        "summary": "create or update user here !!!",
+        "requestBody": {
+          "description": "create or update user",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/createorupdate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/createorupdate"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/createorupdate"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          }
+        }
+      }
+    },
+    "/checkLogin/": {
+      "post": {
+        "tags": [
+          "mirth"
+        ],
+        "summary": "check login here !!!",
+        "requestBody": {
+          "description": "check login",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/checklogin"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/checklogin"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/checklogin"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          }
+        }
+      }
+    },
+    "/checkauthheader/": {
+      "post": {
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "tags": [
+          "mirth"
+        ],
+        "summary": "auth verification here !!!",
+        "requestBody": {
+          "description": "check auth header",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/createorupdate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/createorupdate"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/createorupdate"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          }
+        }
+      }
+    },
+    "/serviceavailability": {
+      "post": {
+        "tags": [
+          "mirth"
+        ],
+        "summary": "Add a new pet to the store",
+        "requestBody": {
+          "description": "Pet object that needs to be added to the store",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/serviceavailability"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/serviceavailability"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/serviceavailability"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          }
+        }
+      }
+    },
+    "/createpatient": {
+      "post": {
+        "tags": [
+          "mirth"
+        ],
+        "summary": "Add a new pet to the store",
+        "requestBody": {
+          "description": "Pet object that needs to be added to the store",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/createpatient"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/createpatient"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/createpatient"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "loginn": {
+        "type": "object",
+        "properties": {
+          "userID": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        }
+      },
+      "verify": {
+        "type": "object",
+        "properties": {
+          "userID": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "provider": {
+            "type": "string"
+          }
+        }
+      },
+      "createorupdate": {
+        "type": "object",
+        "properties": {
+          "emailID": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "provider": {
+            "type": "string"
+          }
+        }
+      },
+      "checklogin": {
+        "type": "object",
+        "properties": {
+          "emailID": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        }
+      },
+      "serviceavailability": {
+        "type": "object",
+        "properties": {
+          "Specialist": {
+            "type": "string"
+          },
+          "City": {
+            "type": "string"
+          },
+          "visitDate": {
+            "type": "string"
+          },
+          "LocationLatitude": {
+            "type": "string"
+          },
+          "LocationLongitude": {
+            "type": "string"
+          },
+          "TechnicianGender": {
+            "type": "string"
+          },
+          "emailID": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "provider": {
+            "type": "string"
+          }
+        }
+      },
+      "createpatient": {
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "mobileNumber": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "bod": {
+            "type": "string"
+          },
+          "gender": {
+            "type": "string"
+          },
+          "bloodGroup": {
+            "type": "string"
+          },
+          "nationalID": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
+          },
+          "provider": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "ApiKeyAuth": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "Authorization"
+      }
+    }
+  }
+}
