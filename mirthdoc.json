@@ -1,0 +1,268 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "mirth doc",
+    "description": "doc for mirth",
+    "version": "1.0.0"
+  },
+  "externalDocs": {
+    "description": "Find out more about Swagger",
+    "url": "http://swagger.io"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:1001/"
+    },
+    {
+      "url": "http://localhost:1003/"
+    },
+    {
+      "url": "http://localhost:1006/"
+    },
+    {
+      "url": "http://localhost:1007/"
+    },
+    {
+      "url": "http://185.238.70.60:1001/"
+    },
+    {
+      "url": "http://185.238.70.60:1003/"
+    },
+    {
+      "url": "http://185.238.70.60:1006/"
+    },
+    {
+      "url": "http://185.238.70.60:1007/"
+    }
+  ],
+  "tags": [
+    {
+      "name": "mirth",
+      "description": "for mirth"
+    }
+  ],
+  "paths": {
+    "/login/": {
+      "post": {
+        "tags": [
+          "mirth"
+        ],
+        "summary": "using this api the provider for bupa can talk to taib",
+        "requestBody": {
+          "description": "m",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/verify"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/verify"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          }
+        }
+      }
+    },
+    "/checkLogin/": {
+      "post": {
+        "tags": [
+          "mirth"
+        ],
+        "summary": "check login here !!!",
+        "requestBody": {
+          "description": "check login",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/checklogin"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/checklogin"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          }
+        }
+      }
+    },
+    "/checkauthheader/": {
+      "post": {
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "tags": [
+          "mirth"
+        ],
+        "summary": "auth verification here !!!",
+        "requestBody": {
+          "description": "m",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/verify"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/createorupdate"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          }
+        }
+      }
+    },
+    "/serviceAvailability/": {
+      "post": {
+        "tags": [
+          "mirth"
+        ],
+        "summary": "Add a new pet to the store",
+        "requestBody": {
+          "description": "Pet object that needs to be added to the store",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/serviceavailability"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/serviceavailability"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "verify": {
+        "type": "object",
+        "properties": {
+          "userID": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "provider": {
+            "type": "string"
+          }
+        }
+      },
+      "createorupdate": {
+        "type": "object",
+        "properties": {
+          "emailID": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "provider": {
+            "type": "string"
+          }
+        }
+      },
+      "checklogin": {
+        "type": "object",
+        "properties": {
+          "emailID": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        }
+      },
+      "serviceavailability": {
+        "type": "object",
+        "properties": {
+          "Specialist": {
+            "type": "string"
+          },
+          "City": {
+            "type": "string"
+          },
+          "visitDate": {
+            "type": "string"
+          },
+          "LocationLatitude": {
+            "type": "string"
+          },
+          "LocationLongitude": {
+            "type": "string"
+          },
+          "TechnicianGender": {
+            "type": "string"
+          },
+          "emailID": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "provider": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "ApiKeyAuth": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "Authorization"
+      }
+    }
+  }
+}
